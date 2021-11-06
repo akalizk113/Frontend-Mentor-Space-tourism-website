@@ -1,0 +1,35 @@
+@use './variables' as *;
+
+@mixin flex($justify: center, $align: center) {
+   display: flex;
+   justify-content: $justify;
+   align-items: $align;
+}
+
+@mixin navHover($underLineHeight: 1px) {
+   &::after,
+   &::before {
+      content: '';
+      position: absolute;
+      right: 50%;
+      width: 0;
+      bottom: 0;
+      height: $underLineHeight;
+      background-color: $primaryTextColor;
+      transition: width 0.2s linear;
+      opacity: 0.5;
+   }
+   &::after {
+      left: 50%;
+      right: unset;
+   }
+   &:hover::after,
+   &:hover::before {
+      width: 50%;
+   }
+   &.active::after,
+   &.active::before {
+      width: 50%;
+      opacity: 1;
+   }
+}

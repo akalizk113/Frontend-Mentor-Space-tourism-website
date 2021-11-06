@@ -1,0 +1,128 @@
+@use '../../scss' as *;
+
+.destination {
+   background-image: url('../../assets/destination/background-destination-desktop.jpg');
+
+   .nav {
+      display: flex;
+      height: 34px;
+      &__item {
+         margin: 0 18px;
+         text-transform: uppercase;
+         font-family: $secondaryFontFamily;
+         font-weight: 400;
+         line-height: 19px;
+         letter-spacing: 2.7px;
+         cursor: pointer;
+         @include navHover(3px);
+         position: relative;
+         &:first-child {
+            margin-left: 0;
+         }
+      }
+   }
+
+   .content {
+      margin-top: 310px;
+      margin-left: 230px;
+      display: flex;
+      &__img {
+         margin-right: 156px;
+         margin-top: 34px;
+         object-fit: contain;
+      }
+
+      &__content {
+         max-width: 445px;
+      }
+
+      &__heading {
+         font-size: 100px;
+         font-weight: 400;
+         text-transform: uppercase;
+         line-height: 115px;
+         margin-top: 38px;
+      }
+
+      &__desc {
+         margin-bottom: 54px;
+      }
+
+      .info {
+         padding-top: 28px;
+         border-top: 1px solid #383b4b;
+         display: flex;
+         &__item {
+            flex-direction: column;
+            display: flex;
+            &:first-child {
+               margin-right: 80px;
+            }
+         }
+         &__name {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-family: $secondaryFontFamily;
+            line-height: 17px;
+            letter-spacing: 2.3625px;
+            color: $secondaryTextColor;
+            margin-bottom: 12px;
+         }
+
+         &__info {
+            font-size: 28px;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: $primaryTextColor;
+         }
+      }
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+   .destination {
+      .content {
+         flex-direction: column;
+         margin-top: 220px;
+         margin-left: 0;
+         align-items: center;
+         &__content {
+            max-width: unset;
+            margin: 0 96px;
+         }
+         &__img {
+            margin: 0;
+            width: 300px;
+            height: 300px;
+         }
+         .nav {
+            margin-top: 54px;
+            justify-content: center;
+            &__item {
+               font-size: 16px;
+               line-height: 19px;
+               letter-spacing: 2.7px;
+            }
+         }
+         &__heading {
+            font-size: 80px;
+            line-height: 92px;
+            text-align: center;
+            margin-top: 32px;
+         }
+
+         &__desc {
+            width: unset;
+            text-align: center;
+            font-size: 16px;
+            line-height: 28px;
+         }
+
+         .info {
+            justify-content: center;
+            text-align: center;
+            //
+         }
+      }
+   }
+}

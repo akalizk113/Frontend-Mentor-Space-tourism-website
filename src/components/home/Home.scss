@@ -1,0 +1,108 @@
+@use '../../scss' as *;
+.home {
+   background-image: url('../../assets/home/background-home-desktop.jpg');
+   display: flex;
+
+   .content {
+      margin-top: 387px;
+      margin-left: 165px;
+      width: 450px;
+      &__sub-heading {
+         font-family: $secondaryFontFamily;
+         font-weight: 400;
+         font-size: 28px;
+         line-height: 34px;
+         letter-spacing: 4.725px;
+         color: $secondaryTextColor;
+      }
+
+      &__heading {
+         margin: 24px 0;
+         font-size: 150px;
+         font-weight: 400;
+         line-height: 172px;
+      }
+   }
+
+   &__btn {
+      margin-left: auto;
+      margin-right: 165px;
+      margin-top: 492px;
+      position: relative;
+      @include flex;
+      button {
+         width: 274px;
+         height: 274px;
+         border-radius: 50%;
+         font-size: 32px;
+         line-height: 37px;
+         letter-spacing: 2px;
+         color: $primaryBgColor;
+         text-transform: uppercase;
+         font-family: $fontFamily;
+         font-weight: 400;
+         z-index: 1;
+         position: relative;
+         &:hover {
+            cursor: pointer;
+         }
+         &:hover::after {
+            transform: scale(1.64);
+            background-color: #ffffff;
+            mix-blend-mode: normal;
+         }
+         &::before {
+            content: 'explore';
+            text-transform: uppercase;
+            position: absolute;
+            inset: 0;
+            color: $primaryBgColor;
+            @include flex;
+            z-index: 1;
+         }
+         &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #ddd;
+            transform: scale(1);
+            transition: transform 0.2s linear, background-color 0.2s linear;
+            border-radius: 50%;
+            opacity: 0.1;
+         }
+      }
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+   .home {
+      @include flex;
+      flex-direction: column;
+      .content {
+         margin-top: 200px;
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+         &__sub-heading {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 3.375px;
+         }
+         &__heading {
+            line-height: 150px;
+         }
+      }
+
+      &__btn {
+         margin-top: 156px;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: 90px;
+         button {
+            width: 242px;
+            height: 242px;
+         }
+      }
+   }
+}

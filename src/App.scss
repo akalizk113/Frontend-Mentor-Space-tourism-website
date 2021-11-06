@@ -1,0 +1,107 @@
+@use './scss/' as *;
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+ul,
+li {
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: unset;
+}
+
+button {
+   outline: none;
+   border: none;
+}
+
+html,
+body {
+   font-family: $fontFamily;
+   font-weight: 400;
+   position: relative;
+   font-size: 100%;
+   background-color: $primaryBgColor;
+}
+
+.App {
+   min-height: 100vh;
+   margin: auto;
+   position: relative;
+   background-color: $primaryBgColor;
+   display: flex;
+   flex-direction: column;
+   & > *:not(.header) {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+   }
+   color: $primaryTextColor;
+}
+
+.container {
+   max-width: 1440px;
+}
+
+.content-heading {
+   position: absolute;
+   top: 212px;
+   left: 166px;
+   font-size: 28px;
+   font-family: $secondaryFontFamily;
+   font-weight: 400;
+   line-height: 34px;
+   letter-spacing: 4.725px;
+   text-transform: uppercase;
+   color: $primaryTextColor;
+   span {
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      letter-spacing: 4.725px;
+      opacity: 0.25;
+      margin-right: 28px;
+   }
+}
+
+.content-desc {
+   font-size: 18px;
+   font-family: $thirdFontFamily;
+   font-weight: 400;
+   line-height: 32px;
+   color: $secondaryTextColor;
+   width: 444px;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+   .container {
+      min-width: 100%;
+   }
+
+   .content-heading {
+      top: 136px;
+      left: 38px;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 3.375px;
+      span {
+         font-size: 20px;
+         line-height: 24px;
+         letter-spacing: 3.375px;
+         margin-right: 20px;
+      }
+   }
+
+   .content-desc {
+      font-size: 16px;
+      line-height: 28px;
+   }
+}

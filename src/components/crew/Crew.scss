@@ -1,0 +1,139 @@
+@use '../../scss' as *;
+
+.crew {
+   background-image: url(../../assets/crew/background-crew-desktop.jpg);
+   display: flex;
+   &__content {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__img {
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+   }
+
+   &__info {
+      margin-left: 166px;
+      margin-top: 400px;
+   }
+
+   &__role {
+      font-size: 32px;
+      line-height: 37px;
+      text-transform: uppercase;
+      color: $primaryTextColor;
+      opacity: 0.5;
+      margin-top: 15px;
+      font-weight: 400;
+   }
+
+   &__name {
+      font-size: 56px;
+      line-height: 64px;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: $primaryTextColor;
+      margin-top: 16px;
+   }
+
+   &__bio {
+      margin-top: 28px;
+   }
+
+   &__control {
+      margin-top: auto;
+      margin-bottom: 94px;
+      margin-left: 166px;
+      height: 15px;
+      display: flex;
+      &-item {
+         width: 15px;
+         height: 15px;
+         border-radius: 50%;
+         background-color: $primaryTextColor;
+         opacity: 0.17;
+         margin: 0 12px;
+         transition: all 0.2s linear;
+         &:first-child {
+            margin-left: 0;
+         }
+         &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+         }
+         &.active {
+            opacity: 1;
+         }
+      }
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+   .crew {
+      flex-direction: column;
+      align-items: center;
+      &__content {
+         margin-top: 220px;
+         align-items: center;
+         height: 232px;
+      }
+
+      &__info {
+         margin-top: 0;
+         margin-left: unset;
+         text-align: center;
+      }
+
+      &__role {
+         font-size: 24px;
+         line-height: 28px;
+         text-align: center;
+         margin-bottom: 8px;
+         margin-top: 0;
+      }
+
+      &__name {
+         font-size: 40px;
+         line-height: 46px;
+         text-align: center;
+         margin-bottom: 16px;
+      }
+
+      &__control {
+         margin: 0;
+         margin-top: auto;
+         &-item {
+            width: 10px;
+            height: 10px;
+            margin: 0 8px;
+         }
+      }
+
+      &__img {
+         margin-top: 40px;
+         height: 532px;
+      }
+   }
+
+   .crew .crew__bio {
+      height: 84px;
+      margin-top: 0;
+      min-width: 400px;
+      width: unset;
+      max-width: 600px;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // display: -webkit-box;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 40px;
+      line-height: 28px;
+      & > * {
+         flex: 1;
+      }
+   }
+}

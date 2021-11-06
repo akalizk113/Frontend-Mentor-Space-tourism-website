@@ -1,0 +1,84 @@
+@use '../../scss/' as *;
+
+.header {
+   height: 96px;
+   position: absolute;
+   top: 40px;
+   right: 0;
+   left: 55px;
+   @include flex(unset);
+}
+
+.header .nav {
+   margin-left: auto;
+   width: 830px;
+   height: 100%;
+   padding-left: 100px;
+   display: flex;
+   background: rgba(255, 255, 255, 0.04);
+   backdrop-filter: blur(81.5485px);
+   position: relative;
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(100% - 30px);
+      width: 473px;
+      height: 1px;
+      background-color: $primaryTextColor;
+      opacity: 0.25;
+   }
+   &__item {
+      @include flex(unset);
+      margin: 0 24px;
+      position: relative;
+   }
+   &__link {
+      height: 100%;
+      @include flex;
+      color: $primaryTextColor;
+      text-transform: uppercase;
+      font-family: $secondaryFontFamily;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+      cursor: pointer;
+      @include navHover(3px);
+      span {
+         font-weight: bold;
+         margin-right: 12px;
+      }
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+   .header {
+      top: 0;
+
+      .nav {
+         width: 450px;
+         margin-left: auto;
+         padding-left: 0;
+         justify-content: space-evenly;
+         &:before {
+            display: none;
+         }
+         &__item {
+            margin: 0;
+         }
+         &__link {
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 2.3625px;
+            span {
+               display: none;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 375px) {
+}
