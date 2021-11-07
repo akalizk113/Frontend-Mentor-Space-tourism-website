@@ -5,7 +5,6 @@ import './Technology.scss';
 import { technologys } from '../../constants';
 
 const Technology = () => {
-   console.log(document.documentElement.offsetWidth);
    const [activeTech, setActiveTech] = useState(technologys[0]);
    return (
       <div className="technology">
