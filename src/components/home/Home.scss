@@ -27,10 +27,10 @@
    &__btn {
       margin-left: auto;
       margin-right: 165px;
-      margin-top: 492px;
       position: relative;
       @include flex;
       button {
+         margin-top: 492px;
          width: 274px;
          height: 274px;
          border-radius: 50%;
