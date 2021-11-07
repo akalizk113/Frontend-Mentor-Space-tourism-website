@@ -7,6 +7,14 @@
    right: 0;
    left: 55px;
    @include flex(unset);
+
+   input[name='nav-mobile-checkbox'] {
+      display: none;
+   }
+
+   label[for='nav-mobile-checkbox'] {
+      display: none;
+   }
 }
 
 .header .nav {
@@ -53,10 +61,52 @@
    }
 }
 
-@media (min-width: 768px) and (max-width: 1440px) {
+@media (max-width: 1439px) {
    .header {
       top: 0;
+      @media screen and (min-width: 375px) and (max-width: 767px) {
+         right: 24px;
+         left: 24px;
+         height: 88px;
+         &__logo {
+            transform: scale(calc(5 / 6));
+         }
 
+         input[name='nav-mobile-checkbox'] {
+            display: none;
+            & + label {
+               .nav-moblie-close-icon {
+                  display: none;
+               }
+               .nav-moblie-menu-icon {
+                  display: block;
+               }
+            }
+
+            &:checked {
+               & + label {
+                  .nav-moblie-menu-icon {
+                     display: none;
+                  }
+                  .nav-moblie-close-icon {
+                     display: block;
+                  }
+               }
+
+               & ~ .nav {
+                  display: block;
+               }
+            }
+         }
+
+         label[for='nav-mobile-checkbox'] {
+            display: block;
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+         }
+      }
       .nav {
          width: 450px;
          margin-left: auto;
@@ -76,9 +126,38 @@
                display: none;
             }
          }
+
+         @media screen and (min-width: 375px) and (max-width: 767px) {
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 254px;
+            padding-top: 100px;
+            padding-left: 32px;
+            justify-content: unset;
+            z-index: 999;
+            animation: slideRTL 0.3s linear;
+            display: none;
+
+            &__item {
+               margin: 16px 0;
+            }
+            &__link {
+               font-size: 16px;
+               line-height: 19px;
+               letter-spacing: 2.7px;
+               &:before,
+               &:after {
+                  display: none;
+               }
+               span {
+                  margin-right: 10px;
+                  display: block;
+               }
+            }
+         }
       }
    }
-}
-
-@media screen and (max-width: 375px) {
 }

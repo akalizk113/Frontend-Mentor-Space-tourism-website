@@ -9,3 +9,12 @@ $primaryBgColor: #0b0d17;
 $fontFamily: 'Bellefair';
 $secondaryFontFamily: 'Barlow Condensed', sans-serif;
 $thirdFontFamily: 'Barlow', sans-serif;
+
+@keyframes slideRTL {
+   from {
+      transform: translateX(100%);
+   }
+   to {
+      transform: translateX(0);
+   }
+}
